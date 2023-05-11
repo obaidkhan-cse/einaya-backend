@@ -5,8 +5,9 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start:dev": "nodemon — exec babel-node server.js",
-    "start:prod": "NODE_ENV=production nodemon server.js"
+    "start": "node babel-node server.js",
+    "start:dev": "npm babel-node server.js",
+    "start:prod": "NODE_ENV=production npm server.js"
   },
   "keywords": [],
   "author": "",
