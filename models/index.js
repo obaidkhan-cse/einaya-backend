@@ -1,18 +1,13 @@
 "use strict";
 const { Sequelize } = require("sequelize");
 const dotenv = require("dotenv");
+dotenv.config({ path: "./config.env" });
 
 
-const sequelize = new Sequelize("btzthr7ib4mva1pevqlp", "ur7yux96kb1lh8im", "ASxWSwlzfkxcMfx9TjII", {
-  host: "btzthr7ib4mva1pevqlp-mysql.services.clever-cloud.com",
+const sequelize = new Sequelize(process.env.DB, process.env.USER, process.env.PASSWORD, {
+  host: process.env.HOST,
   dialect: "mysql",
 });
-
-
-// const sequelize = new Sequelize(process.env.MYSQL_ADDON_DB, process.env.MYSQL_ADDON_HOST, process.env.MYSQL_ADDON_PASSWORD, {
-//   host: process.envMYSQL_ADDON_HOST,
-//   dialect: "mysql",
-// });
 
 
 try {

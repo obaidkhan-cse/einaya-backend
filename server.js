@@ -3,9 +3,10 @@ const dotenv = require("dotenv");
 const app = require("./index");
 
 dotenv.config({ path: "./config.env" });
+const PORT = process.env.PORT || 8000;
 
 sequelize.sync().then((req) => {
-  app.listen(process.env.PORT || 5000, () => {
-    console.log("Server is on");
+  app.listen(PORT, () => {
+    console.log("Server is on ", PORT);
   });
 });

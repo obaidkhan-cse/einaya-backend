@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "ur7yux96kb1lh8im",
-    "password": "ASxWSwlzfkxcMfx9TjII",
-    "database": "btzthr7ib4mva1pevqlp",
-    "host": "btzthr7ib4mva1pevqlp-mysql.services.clever-cloud.com",
+    "username": "root",
+    "password": "",
+    "database": "einaya",
+    "host": "localhost",
     "port": "3306",
     "dialect": "mysql"
   },
