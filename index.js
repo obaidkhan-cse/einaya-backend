@@ -1,5 +1,7 @@
 const express = require("express");
 const morgan = require("morgan");
+const sequelize = require("./models");
+const dotenv = require("dotenv");
 const usersRoutes = require("./routes/userRoutes.js");
 const adminRoutes = require("./routes/adminRoutes.js");
 const doctorRoutes = require("./routes/doctorRoutes.js");
@@ -32,5 +34,15 @@ app.use("/api/v1/doctor", doctorRoutes);
 app.get("/", (req, res) => {
   res.send("Homepage");
 });
+
+dotenv.config({ path: "./config.env" });
+const PORT = process.env.PORT || 8000;
+
+sequelize.sync().then((req) => {
+  app.listen(PORT, () => {
+    console.log("Server is on ", PORT);
+  });
+});
+
 
 module.exports = app;
